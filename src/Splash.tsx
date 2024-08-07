@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Book, Info } from "lucide-react";
 import { VAD } from "web-vad";
 
 import { Button } from "./components/ui/button";
@@ -23,40 +22,21 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
     <main className="w-full h-full flex items-center justify-center bg-primary-200 p-4 bg-[length:auto_50%] lg:bg-auto bg-colorWash bg-no-repeat bg-right-top">
       <div className="flex flex-col gap-8 lg:gap-12 items-center max-w-full lg:max-w-3xl">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-balance text-left">
-          Groq &amp;
-          <br />
-          Llama 3.1 &amp;
-          <br />
-          Daily &amp;
-          <br />
-          RTVI
-          <br />
-          Voice-to-Voice Demo
+          Real-time voice-enabled chatbot
         </h1>
-
+        <p> 
+          We have created a real-time voice activity detection (VAD) model that can detect voice activity in real-time.
+          This particular demo is running on a Silero VAD model that is pre-trained on the OpenSLR dataset.
+          The server running this demo is not GPU-enabled, so expect the performance to be even better on a GPU-enabled server.
+        </p>
         <Button onClick={handleReady} disabled={!isReady}>
-          {isReady ? "Try demo" : "Downloading assets..."}
+          {isReady ? "Check it out!" : "Downloading assets..."}
         </Button>
 
         <div className="h-[1px] bg-primary-300 w-full" />
 
         <footer className="flex flex-col lg:gap-2">
-          <Button variant="light" asChild>
-            <a href="https://github.com/rtvi-ai" className="text-indigo-600">
-              <Info className="size-6" />
-              Learn more about the RTVI standard
-            </a>
-          </Button>
-
-          <Button variant="light" asChild>
-            <a
-              href="https://github.com/rtvi-ai/rtvi-web-demo"
-              className="text-indigo-600"
-            >
-              <Book className="size-6" />
-              Demo source code
-            </a>
-          </Button>
+          <p className="text-neutral-500">@2024, Neutral Base. All rights reserved</p>
         </footer>
       </div>
     </main>
